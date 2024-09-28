@@ -70,21 +70,21 @@ To run the application locally, ensure that the following are installed on your 
 
 ### Auth-Service (Python, Flask)
 
-| Endpoint              | Method | Description              |
-|-----------------------|--------|--------------------------|
-| `/auth/register`       | POST   | Register a new user      |
-| `/auth/login`          | POST   | Login and generate a JWT  |
+| Endpoint                           | Method | Description              |
+|------------------------------------|--------|--------------------------|
+| `localhost:5000/auth/signup`       | POST   | Register a new user      |
+| `localhost:5000/auth/login`        | POST   | Login and generate a JWT |
 
-### Task-Service (Go, Gorilla Mux)
+### Task-Service (Go, Gin)
 
-| Endpoint              | Method | Description              |
-|-----------------------|--------|--------------------------|
-| `/tasks`              | POST   | Create a new task         |
-| `/tasks`              | GET    | Retrieve all tasks        |
+| Endpoint                            | Method | Description              |
+|-------------------------------------|--------|--------------------------|
+| `localhost:8080/tasks`              | POST   | Create a new task        |
+| `localhost:8080/tasks`              | GET    | Retrieve all tasks       |
 
 ### Frontend-Service (ReactJS)
 
-The `frontend-service` serves the web interface at `http://localhost:8080`. From the interface, users can:
+The `frontend-service` serves the web interface at `http://localhost:80`. From the interface, users can:
 
 - Register a new account
 - Login and obtain a JWT token

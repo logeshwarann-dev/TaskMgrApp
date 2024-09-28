@@ -63,7 +63,7 @@ function TasksPage() {
   return (
     <div className="tasks-container">
       <h2>Your Tasks</h2>
-      {tasks.length === 0 ? (
+      {tasks === null || tasks.length === 0 ? (
         <p>No tasks available. Create a new task!</p>
       ) : (
         <ul>
