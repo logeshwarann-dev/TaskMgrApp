@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  auth:
+    build: ./auth-service
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://username:password@db:5432/auth_db
+      - SECRET_KEY=BitsPilani
+    depends_on:
+      - db
+
+  tasks:
+    build: ./tasks-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/tasks_db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_AUTH_URL=http://localhost:5000
+      - REACT_APP_TASKS_URL=http://localhost:8080
+
+  db:
+    build: ./postgres-service  # Reference the Dockerfile here
+    ports:
+      - "5432:5432"
+  
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db

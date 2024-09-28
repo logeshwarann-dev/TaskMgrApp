@@ -1,0 +1,19 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .signup-container input {
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .signup-container button {
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+  }
+  
