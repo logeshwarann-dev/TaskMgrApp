@@ -3,5 +3,3 @@ CREATE TABLE users (
     username VARCHAR(80) UNIQUE NOT NULL,
     password VARCHAR(256) NOT NULL
 );
-
-INSERT INTO users (username, password) VALUES ('testuser@gmail.com', 'password123');
